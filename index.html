@@ -2,12 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <title>Pokemon!</title>
   </head>
   <body>
-    <h1>jPokemon!</h1>
-
+    <img src = 'pics/missingnoGhost.jpeg'>
+    <div class = "row">
+    <div>
+    <input id = 'pkmnSearch' type = 'number' placeholder="Pokemon #">
+  </div>
     <ul id="pokemonList">
+      <h3>Pokemon List</h3>
       <li class="template">
         <span class="pokemon-name">
           <div></div>
@@ -15,8 +21,14 @@
         </span>
       </li>
     </ul>
-
+  </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="js/get-pokemon.js"></script>
   </body>
+  <style>
+    li {
+      list-style-type: none;
+    }
+
+  </style>
 </html>

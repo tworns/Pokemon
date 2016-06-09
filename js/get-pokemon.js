@@ -1,4 +1,4 @@
-var url = 'https://pokeapi.co/api/v2/pokemon/?limit=6&offset=20';
+var url = 'https://pokeapi.co/api/v2/pokemon/?limit=721';
 
 var template = $('.template')
   .detach()
@@ -34,12 +34,18 @@ function sprite(data) {
   replacementDiv.append(backDef);
   replacementDiv.append(front);
   replacementDiv.append(back);
+  //typeData();
   $(this).replaceWith(replacementDiv);
   typeData(data, $(this).closest('li'));
 }
 
 function typeData(data, element){
-
+  var type1 = data.types[0].name;
+  var type2 = data.types[1].name;
+  var pkmnName = data.forms.name;
+  var typeString = pkmnName + ":" + type1
+  //if(type2 !==);
+  return "";
 }
 
 $(document).on('click', 'a',function(e){
