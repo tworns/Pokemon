@@ -1,4 +1,4 @@
-var url = 'https://pokeapi.co/api/v2/pokemon/?limit=721';
+var url = 'http://40ca7692.ngrok.io/api/v2/pokemon/?limit=721';
 var weakTo = "Double damage from: ";
 var weakishTo = "| Half damage to: ";
 var strongTo;
@@ -20,7 +20,7 @@ function addPokemon(pokemon) {
     .attr('href', pokemon.url);
 
   li.attr('data-id', pokemon.id);
-li.attr('class', 'list-group-item');
+
   $('#pokemonList').append(li);
 }
 function sprite(data) {
@@ -97,7 +97,7 @@ function typeData(data){
 
 $('#pkmnSubmit').on('click', function(e){
     e.preventDefault();
-    var urlStr = 'https://pokeapi.co/api/v2/pokemon/' + $('#pkmnSearch').val();
+    var urlStr = 'http://40ca7692.ngrok.io/api/v2/pokemon/' + $('#pkmnSearch').val();
     $.get({
       url: urlStr,
       success: search.bind(this)
