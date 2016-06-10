@@ -1,4 +1,7 @@
 var url = 'https://pokeapi.co/api/v2/pokemon/?limit=721';
+var weakTo = "Double damage from: ";
+var weakishTo = "| Half damage to: ";
+var strongTo;
 
 var template = $('.template')
   .detach()
@@ -57,21 +60,38 @@ function search(data){
   $('#pkmnDisplay').replaceWith(newDiv);
 
 }
-// function weaknesses(data){
-//   $.get({
-//     url = data.types[0].type.url
-//     success:
-//   });
-// }
+function weak(data) {
+  $(data).each( function(i, data){
+  weakTo = weakTo+  data.damage_relations.double_damage_from[i].name +", ";
+  });
+
+  $(data).each(function(i,data){
+    weakishTo = weakishTo+  data.damage_relations.half_damage_to[i].name +", ";
+  });
+  console.log(weakTo);
+  return weakTo;
+  }
 function typeData(data){
+
   var type1 = data.types[0].type.name;
   var pkmnName = data.forms[0].name;
   var typeString = pkmnName + ": " + type1 + " type" ;
-    var type2 = data.types[1];
+  var type2 = data.types[1];
   if(type2 !== null && type2 !== undefined) {
-    typeString = typeString + " and "+ type2.type.name + " type" ;
+    typeString = typeString + ', ' + type2.type.name + " type" ;
   }
-  typeString = typeString;
+  // $.get({
+  //   url : data.types[0].type.url,
+  //   success: weak.bind(this),
+  // });
+
+  //strengths(data);
+  //typeString = typeString +" "+ weakTo;
+  //typeString = typeString+ " "+ weakishTo;
+    console.log(typeString);
+  weakTo = "Double damage from: ";
+  weakishTo = "| Half damage to: ";
+//  debugger;
   return typeString;
 }
 
