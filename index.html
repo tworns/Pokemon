@@ -7,11 +7,15 @@
     <title>Pokemon!</title>
   </head>
   <body>
-    <img src = 'pics/missingnoGhost.jpeg'>
-    <div class = "row">
-    <div>
-    <input id = 'pkmnSearch' type = 'number' placeholder="Pokemon #">
+    <img id= "ghost" src = 'pics/missingnoGhost.jpg' style = "width = 100px; height = 100px;">
+  <div class = "row small-12 columns input-group">
+    <span class = "input-group-label"> Pokemon Number</span>
+    <input id = 'pkmnSearch' type = 'number' class = "input-group-field" placeholder="Pokemon #" max = "721" min = "1" placeholder="1">
+  <div  class = "input-group-button">
+    <a id = "pkmnSubmit" href= "#" class = "button radius alert">Who's that Pokemon?</a>
   </div>
+  </div>
+    <div class = "row">
     <ul id="pokemonList">
       <h3>Pokemon List</h3>
       <li class="template">
@@ -29,6 +33,12 @@
     li {
       list-style-type: none;
     }
-
+    img#ghost{
+      display: block;
+      margin: auto;
+    }
+    .input-group-label{
+      background-color: LightGreen;
+    }
   </style>
 </html>

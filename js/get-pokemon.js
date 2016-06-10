@@ -34,18 +34,20 @@ function sprite(data) {
   replacementDiv.append(backDef);
   replacementDiv.append(front);
   replacementDiv.append(back);
-  //typeData();
+  replacementDiv.append(typeData(data));
   $(this).replaceWith(replacementDiv);
   typeData(data, $(this).closest('li'));
 }
 
-function typeData(data, element){
-  var type1 = data.types[0].name;
-  var type2 = data.types[1].name;
-  var pkmnName = data.forms.name;
-  var typeString = pkmnName + ":" + type1
-  //if(type2 !==);
-  return "";
+function typeData(data){
+  var type1 = data.types[0].type.name;
+  var pkmnName = data.forms[0].name;
+  var typeString = pkmnName + ": " + type1 + " type" ;
+    var type2 = data.types[1];
+  if(type2 !== null && type2 !== undefined) {
+    typeString = typeString + " and "+ type2.type.name + " type" ;
+  }
+  return typeString;
 }
 
 $(document).on('click', 'a',function(e){
