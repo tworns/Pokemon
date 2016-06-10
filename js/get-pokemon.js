@@ -57,6 +57,12 @@ function search(data){
   $('#pkmnDisplay').replaceWith(newDiv);
 
 }
+// function weaknesses(data){
+//   $.get({
+//     url = data.types[0].type.url
+//     success:
+//   });
+// }
 function typeData(data){
   var type1 = data.types[0].type.name;
   var pkmnName = data.forms[0].name;
@@ -65,11 +71,12 @@ function typeData(data){
   if(type2 !== null && type2 !== undefined) {
     typeString = typeString + " and "+ type2.type.name + " type" ;
   }
+  typeString = typeString;
   return typeString;
 }
+
 $('#pkmnSubmit').on('click', function(e){
     e.preventDefault();
-    debugger;
     var urlStr = 'https://pokeapi.co/api/v2/pokemon/' + $('#pkmnSearch').val();
     $.get({
       url: urlStr,
