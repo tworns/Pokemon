@@ -40,6 +40,7 @@ function sprite(data) {
   replacementDiv.append(backDef);
   replacementDiv.append(front);
   replacementDiv.append(back);
+  replacementDiv.append($('<br>'));
   replacementDiv.append(info);
   $(this).replaceWith(replacementDiv);
 }
@@ -57,6 +58,7 @@ function search(data){
   newDiv.append(backDef);
   newDiv.append(front);
   newDiv.append(back);
+  newDiv.append($('<br>'));
   newDiv.append(typeData(data));
   newDiv.attr('id', "pkmnDisplay");
   $('#pkmnDisplay').replaceWith(newDiv);
