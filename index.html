@@ -7,7 +7,9 @@
     <title>Pokemon!</title>
   </head>
   <body>
-    <img id= "ghost" src = 'pics/missingnoGhost.jpg' style = "width = 100px; height = 100px;">
+    <div>
+    <img id= "ghost" src = 'pics/missingnoGhost.jpg' style = "width = 150px; height = 150px;">
+  </div>
   <div class = "row small-6 columns input-group">
     <span class = "input-group-label"> Pokemon Number</span>
     <input id = 'pkmnSearch' type = 'number' class = "input-group-field" placeholder="Pokemon #" max = "721" min = "1">
@@ -17,8 +19,8 @@
 </div>
   <div id = "pkmnDisplay">
   </div>
-    <div class = "row">
-      <nav class="small-6 columns">
+    <div id = 'pkmnList' class = "row">
+      <nav class="small-8 columns">
       <ul id="pokemonList" class = "vertical menu">
         <h3>Pokemon List</h3>
         <li class="template list-group-item">
@@ -34,8 +36,34 @@
     <script src="js/get-pokemon.js"></script>
   </body>
   <style>
+  div#pkmnList{
+    display: block;
+    margin: auto;
+  }
+  ul#pokemonList {
+    display: block;
+    margin: auto;
+  }
+  ul > li {
+    text-align: center;
+  }
     li {
       list-style-type: none;
+    }
+    a:link{
+      color: white;
+      text-decoration:none;
+    }
+    a:visited:{
+      color: green;
+      text-decoration: none;
+    }
+    a:hover{
+      text-decoration: underline;
+    }
+    a.button{
+      width: 50%;
+      height: 50%;
     }
     img#ghost{
       display: block;

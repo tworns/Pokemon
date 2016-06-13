@@ -1,4 +1,4 @@
-var url = 'http://40ca7692.ngrok.io/api/v2/pokemon/?limit=721';
+var url = 'http://pokeapi.co/api/v2/pokemon/?limit=721';
 var weakTo = "Double damage from: ";
 var weakishTo = "| Half damage to: ";
 var strongTo;
@@ -17,9 +17,11 @@ function addPokemon(pokemon) {
   var li = template.clone();
   li.find('.pokemon-name a')
     .text(pokemon.name)
-    .attr('href', pokemon.url);
+    .attr('href', pokemon.url)
+    .attr('class', 'button');
 
   li.attr('data-id', pokemon.id);
+
 
   $('#pokemonList').append(li);
 }
@@ -39,7 +41,6 @@ function sprite(data) {
   replacementDiv.append(back);
   replacementDiv.append(typeData(data));
   $(this).replaceWith(replacementDiv);
-  typeData(data, $(this).closest('li'));
 }
 function search(data){
   var newDiv = $('<div style = "margin-left: auto; margin-right:auto; width: 50em;">');
@@ -88,6 +89,7 @@ function typeData(data){
   //strengths(data);
   //typeString = typeString +" "+ weakTo;
   //typeString = typeString+ " "+ weakishTo;
+  debugger;
     console.log(typeString);
   weakTo = "Double damage from: ";
   weakishTo = "| Half damage to: ";
@@ -97,7 +99,7 @@ function typeData(data){
 
 $('#pkmnSubmit').on('click', function(e){
     e.preventDefault();
-    var urlStr = 'http://40ca7692.ngrok.io/api/v2/pokemon/' + $('#pkmnSearch').val();
+    var urlStr = 'http://pokeapi.co/api/v2/pokemon/' + $('#pkmnSearch').val();
     $.get({
       url: urlStr,
       success: search.bind(this)
@@ -105,7 +107,6 @@ $('#pkmnSubmit').on('click', function(e){
 });
 $(document).on('click', 'a',function(e){
     e.preventDefault();
-
     var link = $(e.currentTarget);
     $.get({
       url: $(this).attr('href'),
