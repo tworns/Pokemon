@@ -31,6 +31,7 @@ function sprite(data) {
   var back = $('<img>');
   var frontDef = $('<img>');
   var backDef = $('<img>');
+  var info = typeData(data);
   frontDef.attr('src',data.sprites.front_default);
   backDef.attr('src',data.sprites.back_default);
   front.attr('src', data.sprites.front_shiny);
@@ -39,11 +40,11 @@ function sprite(data) {
   replacementDiv.append(backDef);
   replacementDiv.append(front);
   replacementDiv.append(back);
-  replacementDiv.append(typeData(data));
+  replacementDiv.append(info);
   $(this).replaceWith(replacementDiv);
 }
 function search(data){
-  var newDiv = $('<div style = "margin-left: auto; margin-right:auto; width: 50em;">');
+  var newDiv = $('<div style = "margin: auto; width: 50em;">');
   var front = $('<img>');
   var back = $('<img>');
   var frontDef = $('<img>');
@@ -89,7 +90,7 @@ function typeData(data){
   //strengths(data);
   //typeString = typeString +" "+ weakTo;
   //typeString = typeString+ " "+ weakishTo;
-  debugger;
+
     console.log(typeString);
   weakTo = "Double damage from: ";
   weakishTo = "| Half damage to: ";

@@ -20,9 +20,10 @@
   <div id = "pkmnDisplay">
   </div>
     <div id = 'pkmnList' class = "row">
+
       <nav class="small-8 columns">
       <ul id="pokemonList" class = "vertical menu">
-        <h3>Pokemon List</h3>
+        <li class = 'list-group-item'> <h3>Pokemon List</h3> </li>
         <li class="template list-group-item">
           <span class="pokemon-name">
             <div></div>
@@ -38,11 +39,15 @@
   <style>
   div#pkmnList{
     display: block;
-    margin: auto;
+    margin-left: auto;
+    margin-right:auto;
+    width: 35em;
   }
   ul#pokemonList {
     display: block;
-    margin: auto;
+    margin-left: auto;
+    margin-right:auto;
+    width: 35em;
   }
   ul > li {
     text-align: center;
@@ -61,7 +66,7 @@
     a:hover{
       text-decoration: underline;
     }
-    a.button{
+    span>a.button{
       width: 50%;
       height: 50%;
     }
